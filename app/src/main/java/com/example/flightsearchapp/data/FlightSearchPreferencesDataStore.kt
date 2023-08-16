@@ -1,6 +1,13 @@
+/* Assignment 5
+
+    FlightSearchPreferencesDataStore.kt
+
+    Maggie Wu / wumag@oregonstate.edu
+    CS 492 / Oregon State University
+ */
+
 package com.example.flightsearchapp.data
 
-import android.content.ContentValues
 import android.util.Log
 import kotlinx.coroutines.flow.Flow
 import java.io.IOException
@@ -22,7 +29,7 @@ class FlightSearchPreferencesDataStore(
     }
 
     suspend fun saveLastSearchQuery(lastSearchQuery: String) {
-        Log.d(ContentValues.TAG, "saveLastSearchQuery: $lastSearchQuery")
+        Log.d(TAG, "saveLastSearchQuery: $lastSearchQuery")
 
         dataStore.edit { preferences ->
             preferences[LAST_SEARCH_QUERY] = lastSearchQuery
@@ -33,7 +40,7 @@ class FlightSearchPreferencesDataStore(
         dataStore.data
             .catch {
                 if (it is IOException) {
-                    Log.e(ContentValues.TAG, "Error reading preferences", it)
+                    Log.e(TAG, "Error reading preferences", it)
                     emit(emptyPreferences())
                 } else {
                     throw it

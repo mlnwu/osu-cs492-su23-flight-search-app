@@ -40,14 +40,6 @@ fun AirportRouteListScreen(
             LazyColumn(content = {
                 items(airportList) { airport ->
                     if (airport.iataCode != uiState.currentAirport.iataCode) {
-                        // note - I'm running an N + 1 query here which is not ideal
-                        // I CAN optimise it by running 2 queries instead - the first to get all the destination airports
-                        // in the favourites table where the departureCode is the current airport's iataCode
-                        // and then the second to get all the airports while excluding the ones whose iataCode
-                        // is in the list of destination airports
-
-                        // this will get complicated and unreadable fast, so I'm keeping it simple for now, albeit inefficient
-
                         RouteCard(
                             originAirport = uiState.currentAirport,
                             destinationAirport = airport,

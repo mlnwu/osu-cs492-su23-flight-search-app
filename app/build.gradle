@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.flightsearch'
+    namespace 'com.example.flightsearchapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.flightsearch"
+        applicationId "com.example.flightsearchapp"
         minSdk 24
         targetSdk 33
         versionCode 1

@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.flightsearch.R
+import com.example.flightsearchapp.R
 import com.example.flightsearchapp.data.Airport
 import com.example.flightsearchapp.data.Favorite
 import com.example.flightsearchapp.ui.FlightSearchViewModel
@@ -66,7 +66,7 @@ fun RouteCard(
                     Text(destinationAirport.name)
                 }
             }
-            FavoriteButton(
+            FavoriteHeart(
                 onClick = {
                     if (favoriteExists != null) {
                         flightSearchViewModel.deleteFavorite(favoriteExists)

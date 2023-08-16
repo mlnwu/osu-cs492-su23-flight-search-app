@@ -14,6 +14,7 @@ import com.example.flightsearchapp.ui.FlightSearchUiState
 import com.example.flightsearchapp.ui.FlightSearchViewModel
 import com.example.flightsearchapp.ui.screens.sharedComponents.RouteCard
 
+
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun AllFavoritesScreen(
@@ -23,7 +24,7 @@ fun AllFavoritesScreen(
 ) {
     val favorites = flightSearchViewModel.getAllFavorites().collectAsState(initial = emptyList()).value
     Text(
-        text = "Favorites",
+        text = "Favorite routes",
         fontWeight = FontWeight.Bold,
         modifier = modifier
             .padding(8.dp)

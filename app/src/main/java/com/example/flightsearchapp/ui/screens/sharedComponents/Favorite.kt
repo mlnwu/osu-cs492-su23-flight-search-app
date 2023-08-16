@@ -7,11 +7,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.flightsearch.R
+import com.example.flightsearchapp.R
 
 
 @Composable
-fun FavoriteButton(
+fun FavoriteHeart(
     onClick: () -> Unit,
     favorited: Boolean,
     modifier: Modifier = Modifier,
@@ -20,13 +20,14 @@ fun FavoriteButton(
         if (favorited) {
             Image(
                 painter = painterResource(id = R.drawable.heart),
-                contentDescription = "Currently a favorite. Tap to unfavorite",
-                modifier = modifier.size(36.dp)
+                contentDescription = "Favorited",
+                modifier = modifier.size(25.dp)
             )
         } else {
             Image(
                 painter = painterResource(id = R.drawable.unfilled_heart),
-                contentDescription = "Currently not a favorite. Tap to favorite",
+                contentDescription = "Not favorited",
+                modifier = modifier.size(25.dp)
             )
         }
     }

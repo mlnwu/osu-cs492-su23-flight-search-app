@@ -13,7 +13,7 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
     name = FLIGHT_SEARCH_PREFERENCE_NAME
 )
 
-class FlightSearchApp: Application() {
+class FlightSearch: Application() {
     lateinit var database: FlightSearchDatabase
     lateinit var preferences: FlightSearchPreferencesDataStore
 

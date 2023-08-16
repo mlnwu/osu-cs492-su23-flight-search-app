@@ -1,3 +1,11 @@
+/* Assignment 5
+
+    FlightSearchEntities.kt
+
+    Maggie Wu / wumag@oregonstate.edu
+    CS 492 / Oregon State University
+ */
+
 package com.example.flightsearchapp.data
 
 import androidx.room.ColumnInfo

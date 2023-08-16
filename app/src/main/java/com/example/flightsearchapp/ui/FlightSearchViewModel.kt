@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.first
-import com.example.flightsearchapp.FlightSearchApp
+import com.example.flightsearchapp.FlightSearch
 import com.example.flightsearchapp.data.Airport
 import com.example.flightsearchapp.data.Favorite
 import com.example.flightsearchapp.data.FavoriteWithAirports
@@ -47,11 +47,6 @@ class FlightSearchViewModel(
         }
     }
 
-    fun setFocusState(isFocused: Boolean) {
-        _uiState.value = _uiState.value.copy(isFocused = isFocused)
-    }
-
-
     fun setSearchQuery(searchTerm: String) {
         setPreferencesSearchQuery(searchTerm)
 
@@ -77,9 +72,6 @@ class FlightSearchViewModel(
         _uiState.value = _uiState.value.copy(currentAirport = airport)
     }
 
-    fun clearCurrentAirport() {
-        _uiState.value = _uiState.value.copy(currentAirport = null)
-    }
 
     fun searchAirports(search: String): Flow<List<Airport>> {
         return flightSearchDao.searchAirports(search)
@@ -111,7 +103,7 @@ class FlightSearchViewModel(
     companion object {
         val factory : ViewModelProvider.Factory = viewModelFactory {
             initializer {
-                val application = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as FlightSearchApp)
+                val application = (this[APPLICATION_KEY] as FlightSearch)
                 FlightSearchViewModel(
                     application.database.flightSearchDao(),
                     application.preferences

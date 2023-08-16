@@ -1,3 +1,11 @@
+/* Assignment 5
+
+    FlightSearchDao.kt
+
+    Maggie Wu / wumag@oregonstate.edu
+    CS 492 / Oregon State University
+ */
+
 package com.example.flightsearchapp.data
 
 import kotlinx.coroutines.flow.Flow
